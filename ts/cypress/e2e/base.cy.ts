@@ -1,5 +1,6 @@
 describe('checa elementos básicos', () => {
   beforeEach(() => {
+    cy.viewport(1920, 1080);
     cy.visit('http://localhost:4200/');
   });
 
