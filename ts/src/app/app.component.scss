@@ -111,7 +111,7 @@ body {
 .notification-img {
   position: fixed;
   top: 14px;
-  left: 1868px;
+  left: 1852px;
 }
 
 // CONTEUDO PRICIPAL
@@ -220,3 +220,119 @@ button {
 .university-names {
   color: #ADA0A0;
 }
+
+.third-section {
+  margin-top: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.123);
+  max-height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.144);
+}
+
+.third-section h3 {
+  padding: 13px;
+  font-size: 20px;
+  background-color: #FDF1EB;
+
+}
+
+.text-content {
+  padding: 10px;
+  text-align: justify;
+  color: #5C5C5C;
+  max-height: none;
+  transition: max-height .3s ease;
+}
+
+.expanded {
+  max-height: none;
+}
+
+.btn-show-more {
+  text-decoration: none;
+  color: #ED7839;
+}
+
+// SEÇÃO QUATRO
+
+.four-section{
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.144);
+}
+.four-section h3 {
+  padding: 13px;
+  font-size: 20px;
+  background-color: #FDF1EB;
+}
+
+.topic-create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 10px;
+}
+
+.topic-create span {
+  font-weight: 700;
+  font-size: 18px;
+  color: #ED7839;
+}
+
+.imgs-topic-create {
+  display: flex;
+  gap: 50px;
+}
+
+.topic-create p {
+  text-align: center;
+  color: #595959;
+}
+
+.btn-create-topic {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px;
+  width: 150px;
+  font-weight: 700;
+  color: white;
+  font-size: 15px;
+  background-color: #ED7839;
+  border-radius: 8px;
+  box-shadow: 1px 2px solid rgba(0, 0, 0, 0.137);
+  text-decoration: none;
+}
+
+// CARD COMMENT
+
+.card-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.212);
+  margin: 20px;
+  padding: 18px;
+}
+
+.title-comment {
+  font-size: 20px;
+  color: #ED7839;
+  font-weight: 600;
+}
+
+.info-title p {
+  color: #5C5C5C;
+}
+
+.actions-comment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+

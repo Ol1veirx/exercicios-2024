@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DevChuva';
+
+  isShowMore = false;
+
+  toggleShowMore() {
+    this.isShowMore = !this.isShowMore;
+  }
 }

@@ -97,11 +97,74 @@
       </div>
     </div>
 
-    <h3>O elemento de expandir resumo precisa ter a classe .btn-show-more</h3>
-    <a href="#" class="btn-show-more">ver mais</a>
+    <div class="third-section" [ngClass]="{ 'expanded': isShowMore }">
+      <h3>Resumo</h3>
+      <div id="text-content" class="text-content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi vero eligendi impedit laudantium quibusdam assumenda aliquid totam dolorum libero, voluptas, architecto aperiam eius, suscipit minus? Adipisci error excepturi in nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste dolorum libero. Molestiae quidem blanditiis earum adipisci ea? Sed facilis laudantium animi unde quidem tempore? Similique facere repellat quis maiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus esse sed quasi nemo voluptatibus amet nostrum. Sed pariatur dolorem molestias! Natus omnis maxime pariatur debitis, est iusto quaerat neque quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam. Pariatur veritatis quibusdam fugit quas est, quos asperiores amet minus consequuntur deleniti aperiam nostrum quia voluptatibus, aspernatur libero. Exercitationem, accusamus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus quidem consequuntur eius cupiditate harum quas, deserunt repudiandae eaque laudantium eveniet magni ea, doloribus accusantium laboriosam velit tenetur? Voluptas, molestiae corporis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam esse itaque vitae sint dolorum tempore debitis reprehenderit culpa consequatur deleniti. Magnam deserunt est quaerat inventore tempora molestiae? Cupiditate, nulla iusto? Nam esse itaque itaque. <a href="#" class="btn-show-more" (click)="toggleShowMore()">{{ isShowMore ? '' : 'ver mais' }}</a> 
+        </p>
+        <br>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat repellendus, accusamus repellat enim autem quis modi fugiat quam maiores cumque molestiae quo voluptates esse delectus dolorum harum minima incidunt facilis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi deleniti, id est quaerat voluptate error ab vitae laboriosam sit dolores nulla dicta blanditiis vero ducimus optio? Dignissimos, necessitatibus veniam? Vitae. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, ad sapiente dolore autem quas assumenda aliquid sed at non cum, alias in voluptatum reiciendis tenetur nam consectetur quos exercitationem fuga.
+        </p>
+        <br>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit ad, dolorum eos mollitia laboriosam natus aliquam exercitationem. Cum, repudiandae! Quo aliquid ipsum iste quisquam distinctio necessitatibus dolorum nam consequatur quasi? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia error nam veniam fuga reprehenderit corrupti modi adipisci tempore rem voluptatibus eius aspernatur aliquam, vel dignissimos dolores eum neque, libero quod! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem magni mollitia deserunt. Culpa vitae libero quo impedit deserunt iusto? Id modi unde voluptas iure numquam ea facilis, aperiam perspiciatis harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, distinctio saepe magni placeat, necessitatibus eveniet consequuntur possimus sunt exercitationem aspernatur recusandae voluptatum officiis. Maxime soluta, ea quas quis voluptatibus itaque? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, officia dicta nostrum a magni non nihil possimus corrupti ducimus accusantium. Assumenda consequatur recusandae aspernatur et dolorum possimus in iste saepe.
+        </p>
 
-    <h3>O elemento de criar tópico precisa ter a classe .btn-create-topic</h3>
-    <a href="#" class="btn-create-topic">criar tópico</a>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos adipisci fugit saepe sapiente at eius? Eius, modi cumque alias numquam consectetur ea eaque ipsum quas autem qui similique cupiditate adipisci! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo placeat eaque quam culpa laborum perferendis, labore optio unde ipsum reiciendis nam numquam sint quod voluptatum nisi nemo, repudiandae pariatur laboriosam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quisquam voluptatem dolores maiores iure veritatis harum numquam magnam. Perspiciatis accusantium vitae debitis delectus culpa aspernatur sed sunt at eaque odit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos quia atque nobis id voluptatum error at dolorum doloribus, laboriosam alias nulla, est, odit non porro? Necessitatibus eveniet temporibus illo accusamus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima facilis dignissimos facere aliquam, officiis in, tenetur vero neque aspernatur quisquam id? Quae laboriosam minima odit officia quis id reiciendis vero? <a href="#" class="btn-show-more" (click)="toggleShowMore()">{{ isShowMore ? 'Ver Menos' : '' }}</a>
+        </p>
+        
+      </div>
+    </div>
+
+    <div class="four-section">
+      <h3>Discussções</h3>
+      <div class="topic-create">
+        <span>Compartilhe suas ideias ou dúvidas com os autores</span>
+        <div class="imgs-topic-create">
+          <img src="assets/icon-create-one.svg">
+          <img src="assets/icon-create-second.svg">
+          <img src="assets/icon-create-tree.svg">
+        </div>
+        <p>
+          Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade?  Deixe seus <br> questionamentos ou sugestões para o autor!
+        </p>
+        <a href="#" class="btn-create-topic">
+          <img src="assets/icon-create-add.svg">
+          criar tópico
+        </a>
+      </div>
+
+      <div class="card-comments">
+        <div class="info-title">
+          <span class="title-comment">Qual é a importância da inteligência artificial na medicina moderna?</span>
+          <p>Carlos Henrique Santos</p>
+        </div>
+        <p>Com o avanço da tecnologia, a inteligência artificial tem desempenhado um papel cada vez mais significativo na área da medicina. Ela pode ser utilizada para análise de grandes volumes de dados médicos, diagnóstico de doenças, desenvolvimento de...</p>
+        <div class="actions-comment">
+          <img src="assets/icon-more-info.svg">
+          <img src="assets/icon-like-comments.svg">
+          <span>1 like</span>
+          <span>1 resposta</span>
+        </div>
+      </div>
+
+      <div class="card-comments">
+        <div class="info-title">
+          <span class="title-comment">Qual é o papel das redes sociais na disseminação de informações falsas?</span>
+          <p>Carlos Henrique Santos</p>
+        </div>
+        <p>Comentário: Com o aumento do uso das redes sociais, a disseminação de informações falsas se tornou uma preocupação crescente. Como você acha que as redes sociais podem ser utilizadas de forma...</p>
+        <div class="actions-comment">
+          <img src="assets/icon-more-info.svg">
+          <img src="assets/icon-like-comments.svg">
+          <span>1 like</span>
+          <span>1 resposta</span>
+        </div>
+      </div>
+    </div>
 
     <h3>O card que contém um tópico respondido precisa ter a classe .answered-topic, o assunto do tópico deve ter a classe .ops-topic-subject</h3>
     <div class="answered-topic">
@@ -114,7 +177,7 @@
     <form>
       Assunto:
       <input class="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
-      Conteúdo:
+      Conteúdo: 
       <!-- <input> -->
       <button class="btn-send-topic">Enviar</button>
     </form>
