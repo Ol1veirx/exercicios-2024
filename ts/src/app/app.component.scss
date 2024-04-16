@@ -40,6 +40,7 @@ body {
 .links-menu {
   padding: 10px;
 }
+
 .links-menu a {
   color: #725C5C;
   text-decoration: none;
@@ -109,7 +110,7 @@ body {
 }
 
 .notification-img {
-  position: fixed;
+  position: absolute;
   top: 14px;
   left: 1852px;
 }
@@ -283,6 +284,10 @@ button {
   color: #ED7839;
 }
 
+.topic-create p {
+  font-size: 17px;
+}
+
 .imgs-topic-create {
   display: flex;
   gap: 50px;
@@ -334,5 +339,103 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+
+// FOOTER
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid rgba(0, 0, 0, 0.212);
+  margin-top: 55px;
+  padding: 10px;
+  gap: 20px;
+}
+
+.img-footer {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.img-footer span {
+  background-color: rgb(70, 35, 105);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-footer p {
+  font-size: 17px;
+}
+
+// FORM
+
+.span-form{
+  font-size: 18px;
+  text-align: center;
+  color: #5C5C5C;
+  margin: 45px;
+}
+.create-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.assunt-box, .content-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.assunt-box label, .content-box label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ED7839;
+  margin-bottom: 10px;
+}
+
+.assunt-box input, .content-box input {
+  width: 75vw;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.089);
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.027);
+}
+
+.assunt-box input {
+  height: 40px;
+}
+
+.content-box input {
+  height: 100px;
+  border-radius: 8px 8px 0 0;
+}
+
+.btn-box-form{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  width: 75vw;
+  height: 30px;
+  border-radius: 0 0  8px 8px;
+  background-color: #CCCCCC;
+}
+
+.btn-box-form button {
+  height: 30px;
+  width: 200px;
+  text-align: center;
+  border: none;
+  color: white;
+  border-radius: 0 0 8px 0;
+  background: linear-gradient(180deg, #FEB154 0%, #F1833E 100%);
 }
 

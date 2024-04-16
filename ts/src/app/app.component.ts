@@ -13,4 +13,10 @@ export class AppComponent {
   toggleShowMore() {
     this.isShowMore = !this.isShowMore;
   }
+
+  showCreateForm: boolean = false;
+
+  toggleCreateForm() {
+    this.showCreateForm = !this.showCreateForm;
+  }
 }

@@ -121,6 +121,7 @@
 
     <div class="four-section">
       <h3>Discussões</h3>
+      <ng-container *ngIf="!showCreateForm">
       <div class="topic-create">
         <span>Compartilhe suas ideias ou dúvidas com os autores</span>
         <div class="imgs-topic-create">
@@ -131,11 +132,28 @@
         <p>
           Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade?  Deixe seus <br> questionamentos ou sugestões para o autor!
         </p>
-        <a href="#" class="btn-create-topic">
+        <a href="#" class="btn-create-topic" (click)="toggleCreateForm()">
           <img src="assets/icon-create-add.svg">
           criar tópico
         </a>
       </div>
+      </ng-container>
+      <ng-container *ngIf="showCreateForm">
+         <form class="create-form">
+           <span class="span-form">Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</span>
+          <div class="assunt-box">
+            <label>Assunto</label>
+            <input class="subject" type="text" placeholder="Defina um tópico sucinto para notificar os autores...">
+          </div>
+
+          <div class="content-box">
+            <label>Conteúdo</label>
+            <input type="text">
+            <div class="btn-box-form"><button>Enviar</button></div>
+          </div>
+        </form>
+      </ng-container>
+     
 
       <div class="card-comments">
         <div class="info-title">
@@ -183,6 +201,22 @@
     </form>
 
     <h3>Após submeter o formulário, a seguinte mensagem deve ser exibida: Aguardando feedback dos autores</h3>
+  </div>
+  
+  <div class="footer-content">
+    <div class="img-footer">
+      <img src="assets/logo-galoa.png">
+      <span>Saiba mais.</span>
+    </div>
+    <div class="text-footer">
+      <p>
+        <strong>Preservar a memória do evento e ampliar o acesso ao conhecimento científico</strong> gerado em eventos é a razão de ser da plataforma Galoá Proceedings
+      </p>
+      <br>
+      <p>
+        Os trabalhos publicados aqui têm maior alcance e ficam disponíveis para toda a comunidade científica, mantendo acesso a debate científicos fomnentado pelos encontros e aumentando o impacto do evento.
+      </p>
+    </div>
   </div>
 
 </div>
