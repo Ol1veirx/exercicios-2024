@@ -101,7 +101,7 @@
       <h3>Resumo</h3>
       <div id="text-content" class="text-content">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi vero eligendi impedit laudantium quibusdam assumenda aliquid totam dolorum libero, voluptas, architecto aperiam eius, suscipit minus? Adipisci error excepturi in nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste dolorum libero. Molestiae quidem blanditiis earum adipisci ea? Sed facilis laudantium animi unde quidem tempore? Similique facere repellat quis maiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus esse sed quasi nemo voluptatibus amet nostrum. Sed pariatur dolorem molestias! Natus omnis maxime pariatur debitis, est iusto quaerat neque quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam. Pariatur veritatis quibusdam fugit quas est, quos asperiores amet minus consequuntur deleniti aperiam nostrum quia voluptatibus, aspernatur libero. Exercitationem, accusamus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus quidem consequuntur eius cupiditate harum quas, deserunt repudiandae eaque laudantium eveniet magni ea, doloribus accusantium laboriosam velit tenetur? Voluptas, molestiae corporis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam esse itaque vitae sint dolorum tempore debitis reprehenderit culpa consequatur deleniti. Magnam deserunt est quaerat inventore tempora molestiae? Cupiditate, nulla iusto? Nam esse itaque itaque. <a href="#" class="btn-show-more" (click)="toggleShowMore()">{{ isShowMore ? '' : 'ver mais' }}</a> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi vero eligendi impedit laudantium quibusdam assumenda aliquid totam dolorum libero, voluptas, architecto aperiam eius, suscipit minus? Adipisci error excepturi in nostrum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima iste dolorum libero. Molestiae quidem blanditiis earum adipisci ea? Sed facilis laudantium animi unde quidem tempore? Similique facere repellat quis maiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus esse sed quasi nemo voluptatibus amet nostrum. Sed pariatur dolorem molestias! Natus omnis maxime pariatur debitis, est iusto quaerat neque quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, quibusdam. Pariatur veritatis quibusdam fugit quas est, quos asperiores amet minus consequuntur deleniti aperiam nostrum quia voluptatibus, aspernatur libero. Exercitationem, accusamus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus quidem consequuntur eius cupiditate harum quas, deserunt repudiandae eaque laudantium eveniet magni ea, doloribus accusantium laboriosam velit tenetur? Voluptas, molestiae corporis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam esse itaque vitae sint dolorum tempore debitis reprehenderit culpa consequatur deleniti. Magnam deserunt est quaerat inventore tempora molestiae? <a href="#" class="btn-show-more" (click)="toggleShowMore()">{{ isShowMore ? '' : 'ver mais' }}</a> 
         </p>
         <br>
         <p>
@@ -121,7 +121,7 @@
 
     <div class="four-section">
       <h3>Discussões</h3>
-      <ng-container *ngIf="!showCreateForm">
+      <ng-container *ngIf="!showCreateForm && !formSendSuccess">>
       <div class="topic-create">
         <span>Compartilhe suas ideias ou dúvidas com os autores</span>
         <div class="imgs-topic-create">
@@ -138,7 +138,7 @@
         </a>
       </div>
       </ng-container>
-      <ng-container *ngIf="showCreateForm">
+      <ng-container *ngIf="showCreateForm && !formSendSuccess">
          <form class="create-form">
            <span class="span-form">Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</span>
           <div class="assunt-box">
@@ -149,11 +149,40 @@
           <div class="content-box">
             <label>Conteúdo</label>
             <input type="text">
-            <div class="btn-box-form"><button>Enviar</button></div>
+            <div class="btn-box-form">
+              <button class="btn-send-topic" (click)="sendForm()">Enviar</button>
+            </div>
           </div>
         </form>
       </ng-container>
+
+      <ng-container  *ngIf="formSendSuccess">
+        <div class="box-msg-send">
+          <span>Seu tópico foi enviado com sucesso! :D</span>
+          <p>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for respondido!</p>
+          <a href="#">Descubra outros trabalhos!</a>
+          <button (click)="createNewForm()">criar novo tópico</button>
+        </div>
+      </ng-container>
      
+      <div class="card-comments feedback-overlay" *ngIf="formSendSuccess">
+        <div class="info-title">
+          <span class="title-comment">Qual é a importância da inteligência artificial na medicina moderna?</span>
+          <p>Carlos Henrique Santos</p>
+        </div>
+        <p>Com o avanço da tecnologia, a inteligência artificial tem desempenhado um papel cada vez mais significativo na área da medicina. Ela pode ser utilizada para análise de grandes volumes de dados médicos, diagnóstico de doenças, desenvolvimento de...</p>
+        <div class="actions-comment">
+          <img src="assets/icon-more-info.svg">
+          <img src="assets/icon-like-comments.svg">
+          <span>19 like</span>
+          <span>5 resposta</span>
+        </div>
+        <div class="feedback-message">
+          <img src="assets/checked-card.svg">
+          <p>Aguardando feedback dos autores</p>
+          <a href="#">Editar tópico</a>
+        </div>
+      </div>
 
       <div class="card-comments">
         <div class="info-title">
@@ -164,27 +193,71 @@
         <div class="actions-comment">
           <img src="assets/icon-more-info.svg">
           <img src="assets/icon-like-comments.svg">
-          <span>1 like</span>
+          <span>13 like</span>
           <span>1 resposta</span>
         </div>
       </div>
 
-      <div class="card-comments">
+      <div class="card-comments answered-topic">
         <div class="info-title">
-          <span class="title-comment">Qual é o papel das redes sociais na disseminação de informações falsas?</span>
+          <span class="title-comment ops-topic-subject">Qual é o papel das redes sociais na disseminação de informações falsas?</span>
           <p>Carlos Henrique Santos</p>
         </div>
         <p>Comentário: Com o aumento do uso das redes sociais, a disseminação de informações falsas se tornou uma preocupação crescente. Como você acha que as redes sociais podem ser utilizadas de forma...</p>
         <div class="actions-comment">
           <img src="assets/icon-more-info.svg">
           <img src="assets/icon-like-comments.svg">
-          <span>1 like</span>
-          <span>1 resposta</span>
+          <span>24 like</span>
+          <span (click)="expandComments()">4 resposta</span>
+        </div>
+
+        <div class="comments-container">
+          <div class="comments-container" *ngIf="isExpanded">
+            <div class="expanded-comments" >
+              <div class="autor-comment">
+                <span>Adriano Silva</span>
+                <p>Autor <img src="assets/check-autor-comment.svg"></p>
+              </div>
+              <p>
+                As redes sociais têm desempenhado um papel significativo na disseminação de informações falsas, muitas vezes contribuindo para um ambiente de desinformação e incerteza. Embora essas plataformas tenham o potencial de conectar pessoas e compartilhar conhecimento, também são frequentemente utilizadas como ferramentas para espalhar boatos, teorias da conspiração e informações não verificadas. O fenômeno da viralização rápida pode levar a uma propagação massiva de informações falsas antes mesmo que sejam verificadas, causando danos à sociedade e prejudicando a confiança nas fontes de informação. É essencial educar os usuários sobre a importância da verificação de fatos e promover a responsabilidade nas redes sociais para mitigar os efeitos negativos da disseminação de informações falsas.
+              </p>
+            </div>
+            <div class="expanded-comments" >
+              <div class="autor-comment">
+                <span>Carlos Henrique Santos</span>
+              </div>
+              <p>
+                Consegui entender melhor agora! Parece que a variação da análise da dimensão e impacto de processo formativo situado impacto de processo formativo.
+                <br>
+                Obrigada pela resposta, muito interessante o seu trabalho!
+              </p>
+            </div>
+            
+            <div class="expanded-comments" >
+              <div class="autor-comment">
+                <span>Liedson Danubio Oliveira Leite</span>
+                <p>Autor <img src="assets/check-autor-comment.svg"></p>
+              </div>
+              <p>
+                A disseminação de informações falsas nas redes sociais pode ter sérias consequências para a sociedade e para o debate público. Quando notícias não verificadas ou distorcidas se espalham rapidamente através dessas plataformas, podem influenciar a opinião pública, moldar narrativas e até mesmo afetar processos políticos e eleitorais. Além disso, a proliferação de desinformação pode minar a confiança nas instituições e na mídia tradicional, tornando mais difícil para as pessoas distinguir entre fatos e ficção. Portanto, combater a disseminação de informações falsas nas redes sociais é crucial para preservar a integridade do debate público e promover uma sociedade informada e democrática.
+              </p>
+            </div>
+            <div class="expanded-comments" >
+              <div class="autor-comment">
+                <span>Karen Rayssa</span>
+                <p>Autor <img src="assets/check-autor-comment.svg"></p>
+              </div>
+              <p>
+                Em meio ao panorama digital atual, as redes sociais têm desempenhado um papel ambíguo na disseminação de informações falsas. Por um lado, essas plataformas oferecem um espaço para a troca livre de ideias e o compartilhamento de conhecimento, permitindo que os usuários expressem suas opiniões e participem de debates públicos. No entanto, por outro lado, a natureza descentralizada e muitas vezes não regulamentada das redes sociais também as torna um terreno fértil para a propagação de desinformação e notícias falsas.
+              </p>
+            </div>
+             <button class="btn-close-comment" (click)="collapseComments()">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <h3>O card que contém um tópico respondido precisa ter a classe .answered-topic, o assunto do tópico deve ter a classe .ops-topic-subject</h3>
+    <!-- <h3>O card que contém um tópico respondido precisa ter a classe .answered-topic, o assunto do tópico deve ter a classe .ops-topic-subject</h3>
     <div class="answered-topic">
       <h4 class="ops-topic-subject">Título do tópico</h4>
     </div>
@@ -197,11 +270,11 @@
       <input class="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
       Conteúdo: 
       <!-- <input> -->
-      <button class="btn-send-topic">Enviar</button>
-    </form>
-
-    <h3>Após submeter o formulário, a seguinte mensagem deve ser exibida: Aguardando feedback dos autores</h3>
-  </div>
+      <!-- <button class="btn-send-topic">Enviar</button>
+    </form> -->
+<!-- 
+    <h3>Após submeter o formulário, a seguinte mensagem deve ser exibida: Aguardando feedback dos autores</h3> -->
+  </div> 
   
   <div class="footer-content">
     <div class="img-footer">

@@ -19,4 +19,24 @@ export class AppComponent {
   toggleCreateForm() {
     this.showCreateForm = !this.showCreateForm;
   }
+
+  sendForm() {
+    this.formSendSuccess = true;
+  }
+
+  formSendSuccess: boolean = false;
+
+  createNewForm() {
+    this.formSendSuccess = false;
+  }
+
+  isExpanded: boolean = false;
+
+  expandComments() {
+    this.isExpanded = true;
+  }
+
+  collapseComments() {
+    this.isExpanded = false;
+  }
 }
