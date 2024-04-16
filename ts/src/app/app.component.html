@@ -31,12 +31,12 @@
     <div class="event-name">SLACA 2019</div>
     <img src="assets/logo-slaca.png" alt="Logo do Evento" class="logo">
     <div class="links-menu">
-        <a href="#">Apresentação</a>
-        <a href="#">Comitês</a>
-        <a href="#">Autores</a>
-        <a href="#">Eixos Temáticos</a>
-        <a href="#">Trabalhos</a>
-        <a href="#">Contato</a>
+        <a href="#" (click)="selectedLink = 'Apresentação'" [class.selected]="selectedLink === 'Apresentação'">Apresentação</a>
+        <a href="#" (click)="selectedLink = 'Comitês'" [class.selected]="selectedLink === 'Comitês'">Comitês</a>
+        <a href="#" (click)="selectedLink = 'Autores'" [class.selected]="selectedLink === 'Autores'">Autores</a>
+        <a href="#" (click)="selectedLink = 'Eixos Temáticos'" [class.selected]="selectedLink === 'Eixos Temáticos'">Eixos Temáticos</a>
+        <a href="#" (click)="selectedLink = 'Trabalhos'" [class.selected]="selectedLink === 'Trabalhos'">Trabalhos</a>
+        <a href="#" (click)="selectedLink = 'Contato'" [class.selected]="selectedLink === 'Contato'">Contato</a>
     </div>
 </div>
 
@@ -121,7 +121,7 @@
 
     <div class="four-section">
       <h3>Discussões</h3>
-      <ng-container *ngIf="!showCreateForm && !formSendSuccess">>
+      <ng-container *ngIf="!showCreateForm && !formSendSuccess">
       <div class="topic-create">
         <span>Compartilhe suas ideias ou dúvidas com os autores</span>
         <div class="imgs-topic-create">
@@ -256,24 +256,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <h3>O card que contém um tópico respondido precisa ter a classe .answered-topic, o assunto do tópico deve ter a classe .ops-topic-subject</h3>
-    <div class="answered-topic">
-      <h4 class="ops-topic-subject">Título do tópico</h4>
-    </div>
-    <div class="comments-container">
-      Os comentários de um tópico devem estar encapsulados num elemento com a classe .comments-container
-    </div>
-
-    <form>
-      Assunto:
-      <input class="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
-      Conteúdo: 
-      <!-- <input> -->
-      <!-- <button class="btn-send-topic">Enviar</button>
-    </form> -->
-<!-- 
-    <h3>Após submeter o formulário, a seguinte mensagem deve ser exibida: Aguardando feedback dos autores</h3> -->
   </div> 
   
   <div class="footer-content">

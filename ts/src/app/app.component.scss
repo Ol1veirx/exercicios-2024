@@ -46,9 +46,17 @@ body {
   text-decoration: none;
   margin-bottom: 10px;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   line-height: 19px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+}
+
+.selected {
+  background-color: #FDF1EB;
+  border-radius: 8px;
+  color: white;
 }
 
 .link-menu a:active{
@@ -339,6 +347,7 @@ button {
   display: flex;
   align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 
 

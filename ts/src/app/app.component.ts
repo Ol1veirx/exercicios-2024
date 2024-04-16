@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'DevChuva';
 
+   selectedLink: string = '';
+
+  selectLink(link: string): void {
+    this.selectedLink = link;
+  } 
+
   isShowMore = false;
 
   toggleShowMore() {
